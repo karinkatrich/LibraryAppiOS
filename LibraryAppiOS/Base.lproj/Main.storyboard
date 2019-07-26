@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="97" id="DBi-v9-Jia" customClass="BookTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="97" id="DBi-v9-Jia" customClass="BookCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DBi-v9-Jia" id="lF1-g1-6UR">
@@ -58,9 +58,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="idLabel" destination="gYp-9z-p42" id="bNK-0w-ttG"/>
-                                            <outlet property="titleLabel" destination="ud8-U1-HH7" id="NlJ-Tk-Dyp"/>
-                                            <outlet property="yearLabel" destination="jnd-mH-Wre" id="X6b-gQ-THc"/>
+                                            <outlet property="idLabel" destination="gYp-9z-p42" id="fIh-kj-PFn"/>
+                                            <outlet property="titleLabel" destination="ud8-U1-HH7" id="uyx-r0-kPq"/>
+                                            <outlet property="yearLabel" destination="jnd-mH-Wre" id="95T-Du-9sU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

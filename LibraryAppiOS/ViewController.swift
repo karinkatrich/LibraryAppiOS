@@ -8,61 +8,6 @@
 
 import UIKit
 
-struct Book: Codable {
-    let id: Int?
-    let bookTitle: String?
-    let bookYear: Int?
-
-//    let genre: [Genre]
-//    let ratings: [Rating]
-//    let cast: [Cast]
-
-    private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case bookTitle = "title"
-        case bookYear = "year"
-//        case genre = "genre"
-//        case rating = "ratings"
-//        case cast = "cast"
-    }
-}
-
-//struct Genre: Decodable {
-//    let name: String
-//    let description: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case name = "name"
-//        case description = "description"
-//    }
-//}
-
-//struct Rating: Decodable {
-//    let comment: String
-//    let rating: Int
-//    let date: NSDate
-//
-//    enum CodingKeys: String, CodingKey {
-//        case comment = "comment"
-//        case rating = "rating"
-//        case date = "date"
-//    }
-//
-//}
-//
-//struct Cast: Decodable {
-//    actorName: String
-//    role: String
-//    numberOfAwards: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case actorName = "name"
-//        case role = "inAs"
-//        case numberOfAwards = "noOfAwards"
-//    }
-//
-//}
-
 class ViewController: UIViewController, UITableViewDataSource {
 
     var books = [Book]()
@@ -71,12 +16,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
 
-    static let cellReuseIdentifier = "identifier"
+    static let cellReuseIxdentifier = "identifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureTableView()
 
         let login = "user"
         let password = "password"
@@ -96,65 +39,52 @@ class ViewController: UIViewController, UITableViewDataSource {
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             guard let data = data else { return }
 
-            let bookWrapper = try! self.decoder.decode([Book].self, from: data)
+            var downloadedBooks = try! self.decoder.decode([Book].self, from: data)
+            //self.books = downloadedBooks.books
+//            self.books = downloadedBooks.append(books)
+            print(downloadedBooks.id)
+            print(downloadedBooks.bookTitle)
+            print(downloadedBooks.bookYear)
+
             //let book = bookWrapper[]
 
-            for info in self.books {
-                    print(info.bookTitle)
-                    print(info.bookYear)
-                    print(info.id)
+//            for info in self.books {
+//                    print(info.bookTitle)
+//                    print(info.bookYear)
+//                    print(info.id)
+//
+//
+//            }
+            print(downloadedBooks)
 
-
-            }
-
-            print("\(bookWrapper)")
+           // print("\(self.books)")
 
             // print("The response is : ",String(data: data, encoding: .utf8)!)
         }
         task.resume()
     }
 
-    func loadBooks() {
-        guard let book1 = Book(id: books. , bookTitle: <#T##String?#>, bookYear: <#T##Int?#>)
-    }
+//    func loadBooks() {
+//        let bookId =
+//        guard let book1 = Book(id:self.books , bookTitle: <#T##String?#>, bookYear: <#T##Int?#>)
+//    }
 
-
-    private func configureTableView() {
-        self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.tableView.frame = self.view.bounds
-        self.tableView.dataSource = self
-        self.view.addSubview(self.tableView)
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let books = self.books else {
-//            return 0
-//        }
-//
        return books.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellReuseIdentifier)
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell") as? BookCell else { return UITableViewCell() }
 
-        if cell == nil {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: ViewController.cellReuseIdentifier)
-        }
+        var stringId = "\(String(describing: books[indexPath.row].id))"
+        var stringYear = "\(books[indexPath.row].bookYear)"
 
-        let feedItem = self.books[indexPath.row]
+        cell.idLabel.text = stringId
+        cell.titleLabel.text = books[indexPath.row].bookTitle
+        cell.yearLabel.text = stringYear
 
-        let bookYearString = "\(String(describing: feedItem.bookYear))"
-
-        cell?.textLabel?.text = bookYearString
-
-        if let title = feedItem.bookTitle {
-            cell?.detailTextLabel?.text = "By \(String(describing: title))"
-        }
-        else {
-            cell?.detailTextLabel?.text = nil
-        }
-
-        return cell!
+        return cell
     }
 }
 

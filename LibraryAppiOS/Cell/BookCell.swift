@@ -1,5 +1,5 @@
 //
-//  BookTableViewCell.swift
+//  BookCell.swift
 //  LibraryAppiOS
 //
 //  Created by karyna on 7/25/19.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-class BookTableViewCell: UITableViewCell {
+class BookCell: UITableViewCell {
+
 
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

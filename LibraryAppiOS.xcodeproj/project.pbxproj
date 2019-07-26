@@ -12,7 +12,8 @@
 		923D362122E864FE00BCB314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923D361F22E864FE00BCB314 /* Main.storyboard */; };
 		923D362322E8650000BCB314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923D362222E8650000BCB314 /* Assets.xcassets */; };
 		923D362622E8650000BCB314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923D362422E8650000BCB314 /* LaunchScreen.storyboard */; };
-		92A2A44222E9EB3A00CF35AC /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A44122E9EB3A00CF35AC /* BookTableViewCell.swift */; };
+		92A2A44222E9EB3A00CF35AC /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A44122E9EB3A00CF35AC /* BookCell.swift */; };
+		92A2A44422EB1A9B00CF35AC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A44322EB1A9B00CF35AC /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		923D362222E8650000BCB314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923D362522E8650000BCB314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		923D362722E8650000BCB314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92A2A44122E9EB3A00CF35AC /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookTableViewCell.swift; path = "../../../../../../../../../System/Volumes/Data/Users/karyna/Library/CloudStorage/iCloud Drive/Documents/LibraryAppiOS/LibraryAppiOS/Cell/BookTableViewCell.swift"; sourceTree = "<group>"; };
+		92A2A44122E9EB3A00CF35AC /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookCell.swift; path = "../../../../../../../../../System/Volumes/Data/Users/karyna/Library/CloudStorage/iCloud Drive/Documents/LibraryAppiOS/LibraryAppiOS/Cell/BookCell.swift"; sourceTree = "<group>"; };
+		92A2A44322EB1A9B00CF35AC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Book.swift; path = "../../../../../../../../../System/Volumes/Data/Users/karyna/Library/CloudStorage/iCloud Drive/Documents/LibraryAppiOS/LibraryAppiOS/Model/Book.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		92A2A43D22E99B8800CF35AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92A2A44322EB1A9B00CF35AC /* Book.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -78,7 +81,7 @@
 		92A2A44022E9EB1100CF35AC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				92A2A44122E9EB3A00CF35AC /* BookTableViewCell.swift */,
+				92A2A44122E9EB3A00CF35AC /* BookCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -154,8 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A2A44422EB1A9B00CF35AC /* Book.swift in Sources */,
 				923D361E22E864FE00BCB314 /* ViewController.swift in Sources */,
-				92A2A44222E9EB3A00CF35AC /* BookTableViewCell.swift in Sources */,
+				92A2A44222E9EB3A00CF35AC /* BookCell.swift in Sources */,
 				923D361C22E864FE00BCB314 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
